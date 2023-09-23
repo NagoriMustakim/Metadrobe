@@ -5,16 +5,17 @@ const { metadrobeMenHelper } = require("./menhelperStuff");
 const { singularHelpWomen } = require("./womensingularHelper");
 const { singularHelpMen } = require("./mensingularHelper");
 const app = express();
+const router = express.Router();
 const womenCollection = "metawardrobe-virtual-womens-fashion";
 const menCollection = "metawardrobe-virtual-mens-fashion";
 
 
-app.get("/", (req, res) => {
+
+router.get("/", (req, res) => {
     res.send("HELLO API");
 
 });
 
-const router = express.Router();
 
 router.get(
     "/registry/:collectionName/address/:address/assets/:id",
